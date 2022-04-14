@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Exam Schedule Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <h1>Exam Schedule</h1>
+    <div class=outputs>
+      <section class=output>
+        <h2>Class</h2>
+        <ul class=ouput>
+          {% for item in classes %}
+            <p> {{ item }} </p>
+            {% endfor %}
+        </ul>
+      </section>
+      <section class=output>
+        <h2>Type</h2>
+        <ul class=ouput>
+          {% for item in typeOfExam %}
+            <p> {{ item }} </p>
+            {% endfor %}
+        </ul>
+      </section>
+      <section class=output>
+        <h2>Date</h2>
+        <ul class=ouput>
+          {% for item in date %}
+            <p> {{ item }} </p>
+            {% endfor %}
+        </ul>
+      </section>
+    </div>
+    <form class="upload" method="POST"><input class="button" type="submit" value="Download" name="download"/></form>
+  </body>
+</html>
